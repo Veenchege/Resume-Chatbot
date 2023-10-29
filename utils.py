@@ -2,10 +2,10 @@ from sentence_transformers import SentenceTransformer
 import pinecone
 import openai
 import streamlit as st
-openai.api_key = "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"
+openai.api_key = openai
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
-pinecone.init(api_key='a50259f9-ecc5-4f21-8dcf-a87feae70bf2', environment='gcp-starter')
+pinecone.init(api_key=pinecone, environment='gcp-starter')
 index = pinecone.Index('resume-chatbot')
 
 def find_match(input):
